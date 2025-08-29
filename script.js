@@ -91,11 +91,13 @@ const show = document.querySelector(".task-show");
         let {id,title,date,description} = currentTask;
         currentTaskDiv.classList.add("expand")
 currentTaskDiv.querySelector(".action-buttons").innerHTML='<button type="button" onclick="minimize(this)" class="expand-btn" style="transform:translateX(-20px)"><i class="fa-solid fa-minimize fa-1x"></i></button>'   
-       currentTaskDiv.children[0].innerHTML=`
+      setTimeout(function(){
+currentTaskDiv.children[0].innerHTML=`
         <span>${title}</span>
             <p>${date===""?`${description.length} characters`:`${date} || ${description.length} characters`}</p>
           <p class="task-description">${description}</p>
        `
+       },100);
       }
       function minimize(elem){
             let currentTaskDiv = elem.parentElement.parentElement;
