@@ -1,6 +1,4 @@
-let isBeingEdited = false;
-const show = document.querySelector(".task-show");
-      const formInput = document.getElementById("form-input");
+  const formInput = document.getElementById("form-input");
       const formDialog = document.getElementById("form-dialog");
       const taskContainer = document.getElementById("task-container");
       const createTask = document.getElementById("create-task");
@@ -17,7 +15,6 @@ const show = document.querySelector(".task-show");
         dateInput.value = "";
         descriptionInput.value = "";
         addUpdate.innerHTML = "Add";
-        formDialog.close();
         currentTask = {};
       }
       closeBtn.addEventListener("click", reset);
@@ -82,7 +79,6 @@ const show = document.querySelector(".task-show");
         localStorage.setItem("data", JSON.stringify(taskData));
       }
       function expand(elem){
-        // document.querySelectorAll(".task").forEach(el=>el.classList.remove("expand"));
         let currentTaskDiv = elem.parentElement.parentElement;
         let numArray = taskData.findIndex(
           (item) => item.id === currentTaskDiv.id
