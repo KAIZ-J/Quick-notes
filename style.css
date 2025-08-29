@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'Chillax-Regular';
+  src: url('../fonts/Chillax-Regular.woff2') format('woff2'),
+       url('../fonts/Chillax-Regular.woff') format('woff'),
+       url('../fonts/Chillax-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+      body {
+        font-family: Chillax-Regular;
+        background-color: #070b0d;
+        color: #edf1f2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      body::-webkit-scrollbar{
+        display: none;
+      }
+      button{
+        cursor: pointer;
+      }
+      #create-task {
+        border-radius: 50px;
+        border: none;
+        
+        width: 0px;
+        background-color: #5b60ee;
+        color: #fef9f8;
+        cursor: pointer;
+        height: 0px;
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        transition: scale 0.2s ease-in-out;
+        animation: op forwards 0.7s ease-in;
+      }
+      @keyframes op{
+        0%{
+          padding: 0px;
+          width:0px;
+          height: 0px;
+        }
+        100%{
+         padding: 10px;
+           width:50px;
+           height: 50px;
+        }
+      }
+      dialog::backdrop{
+        backdrop-filter: blur(10px);
+         background-color: rgba(0, 0, 0, 0.3); 
+      }
+      dialog{
+        border-radius: 10px;
+        border: #fef9f8 solid 2px;
+      }
+      #create-task:hover {
+        scale: 1.1;
+        background-color: #37a8cd;
+      }
+      #header {
+        text-align: center;
+      }
+      #task-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 15px;
+        place-items: center;
+      }
+
+      #task-container .task {
+        padding: 15px;
+        width: 80%;
+        border-radius: 10px;
+        border: 0.5px solid #5b60ee;
+        background-color: rgb(91, 96, 238, 0.1);
+        height: 50px; 
+        text-wrap: balance;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: height .3s ease;
+      }
+      
+      #task-container .task.expand{
+        height: 200px;
+      }
+      #task-container div p{
+        font-size: 0.8rem;
+        color: gray;
+      }
+      #del-contain{
+        align-self: center;
+      }
+      .action-buttons button{
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: #e92929;
+      }
+      .action-buttons button:nth-child(1){
+        color: white;
+      }
+       .action-buttons button:nth-child(2){
+        color: #5b60ee;
+      }
+      #form-input {
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        
+      }
+      #close-buttons {
+        top: 0.5rem;
+        position: absolute;
+        right: 1rem;
+      }
+      #close-buttons button {
+        background: transparent;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        color: #e92929;
+      }
+      #form-buttons {
+        bottom: 3rem;
+        position: absolute;
+        right: 2rem;
+      }
+      #form-buttons button {
+        font-family: Poppins;
+      }
+      textarea {
+        width: 99%;
+        min-height: 100px;
+        max-height: 200px;
+        z-index: 999999;
+        font-family: montserrat;
+        outline: none;
+        resize: vertical;
+      }
+      input {
+        padding: 5px;
+        font-family: poppins;
+        outline: none;
+      }
+#form-dialog{
+  transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+  background-color:#090b0d;
+  transition: transform .2s ease;
+  position: fixed;
+  align-content: center;
+ left: 0;
+ bottom: 0;
+}
+  @media (min-width:600px) {
+        #form-dialog{
+          transition: transform .35s ease;
+        }
+      }
+      .task-description{
+        height: 110px;
+        overflow-y: scroll;
+      }
+      .task-description::-webkit-scrollbar{
+        display: none;
+      }

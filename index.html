@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Notes</title>
+    <script
+      src="https://kit.fontawesome.com/9603c04a31.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Kablammo|Sour Gummy|Atma|Poppins|Montserrat"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="header">Quick Notes</h1>
+    </div>
+    <button type="button" id="create-task">
+      <i class="fa-solid fa-add fa-2x"></i>
+    </button>
+    <div id="task-container"></div>
+    <div id="form-dialog">
+      <form id="form-input">
+        <div id="close-buttons">
+          <button type="button" id="close-btn" onclick="closeTask()">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+        </div>
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" required /> <br />
+        <label for="date-input">Date:</label>
+        <input type="date" id="date-input" /> <br />
+        <label for="description-input">Description:</label>
+        <textarea id="description-input" required></textarea>
+        <div id="form-buttons">
+          <button type="submit" id="add-update">Add</button>
+          <button type="reset" id="reset-btn">Reset</button>
+        </div>
+      </form>
+    </div>
+    <br>
+    <script src="script.js">
+      
+    </script>
+  </body>
+</html>
