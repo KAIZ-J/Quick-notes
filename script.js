@@ -38,7 +38,7 @@ const show = document.querySelector(".task-show");
                 </span>          
 <span class="action-buttons">
  <button type="button" onclick="editBtn(this)"><i class="fa-solid fa-pen fa-1x"></i></button>
-        <button type="button" onclick="expand(this)" class="expand-btn"><i class="fa-solid fa-maximize fa-1x"></i></button>
+        <button type="button" onclick="expand(this)" class="expand-btn"><i class="fa-solid fa-up-right-and-down-left-from-center fa-1x"></i></button>
  <button type="button" onclick="delBtn(this)" id="del-button"><i class="fa-solid fa-trash fa-1x" onmouseover="wiggle(this)" onmouseout="stopwiggle(this)"></i></button>
  
               </span> 
@@ -90,7 +90,7 @@ const show = document.querySelector(".task-show");
         currentTask = taskData[numArray];
         let {id,title,date,description} = currentTask;
         currentTaskDiv.classList.add("expand")
-currentTaskDiv.querySelector(".action-buttons").innerHTML='<button type="button" onclick="minimize(this)" class="expand-btn" style="transform:translateX(-20px)"><i class="fa-solid fa-minimize fa-1x"></i></button>'   
+currentTaskDiv.querySelector(".action-buttons").innerHTML='<button type="button" onclick="minimize(this)" style="transform:translateX(-20px);scale:1.5"><i class="fa-solid fa-down-left-and-up-right-to-center fa-1x"></i></button>'   
       setTimeout(function(){
 currentTaskDiv.children[0].innerHTML=`
         <span>${title}</span>
@@ -103,7 +103,7 @@ currentTaskDiv.children[0].innerHTML=`
             let currentTaskDiv = elem.parentElement.parentElement;
         currentTaskDiv.classList.remove("expand");
         setTimeout(function(){
-        currentTaskDiv.querySelector(".action-buttons").innerHTML='<button type="button" onclick="editBtn(this)"><i class="fa-solid fa-pen fa-1x"></i></button> <button type="button" onclick="expand(this)" class="expand-btn"><i class="fa-solid fa-maximize fa-1x"></i></button> <button type="button" onclick="delBtn(this)" id="del-button"><i class="fa-solid fa-trash fa-1x" onmouseover="wiggle(this)" onmouseout="stopwiggle(this)"></i></button> '
+        currentTaskDiv.querySelector(".action-buttons").innerHTML='<button type="button" onclick="editBtn(this)"><i class="fa-solid fa-pen fa-1x"></i></button> <button type="button" onclick="expand(this)" class="expand-btn"><i class="fa-solid fa-up-right-and-down-left-from-center fa-1x"></i></button> <button type="button" onclick="delBtn(this)" id="del-button"><i class="fa-solid fa-trash fa-1x" onmouseover="wiggle(this)" onmouseout="stopwiggle(this)"></i></button> '
       },100);
       let numArray = taskData.findIndex(
           (item) => item.id === currentTaskDiv.id
