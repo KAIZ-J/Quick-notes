@@ -8,7 +8,7 @@
       const addUpdate = document.getElementById("add-update");
       const closeBtn = document.getElementById("close-btn");
       function dotdot(str,n){ if(str.split("").length>n){ return `${str.split("").splice(0,n).join("")}...`} else{return str} }
-      let taskData = JSON.parse(localStorage.getItem("data")) || [];
+      let taskData = JSON.parse(localStorage.getItem("taskData")) || [];
       let currentTask = {};
       function reset() {
         titleInput.value = "";
@@ -64,7 +64,7 @@
         } else {
           taskData[arrayIndex] = theTask;
         }
-        localStorage.setItem("data", JSON.stringify(taskData));
+        localStorage.setItem("taskData", JSON.stringify(taskData));
         container();
         reset();
       }
@@ -76,7 +76,7 @@
         );
         taskData.splice(numArray, 1);
         elem.parentElement.parentElement.remove();
-        localStorage.setItem("data", JSON.stringify(taskData));
+        localStorage.setItem("taskData", JSON.stringify(taskData));
       }
       function expand(elem){
         let currentTaskDiv = elem.parentElement.parentElement;
@@ -112,18 +112,17 @@ currentTaskDiv.children[0].innerHTML=`
        `
       }
  function editBtn(elem) {
-     isBeingEdited = true;
         let numArray = taskData.findIndex(
           (item) => item.id === elem.parentElement.parentElement.id
         );
         currentTask = taskData[numArray];
-        addUpdate.innerHTML = "Change";
+        addUpdate.innerHTML = "Edit";
         titleInput.value = currentTask.title;
         dateInput.value = currentTask.date;
         descriptionInput.value = currentTask.description;
          formDialog.style.transform="translateX(0)"
         titleInput.focus();
-        localStorage.setItem("data", JSON.stringify(taskData));
+        localStorage.setItem("taskData", JSON.stringify(taskData));
         
       }
 
